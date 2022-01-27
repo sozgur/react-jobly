@@ -1,5 +1,8 @@
-.navbar {
-    padding: 2rem;
+.NavBar {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 19px;
+    background-color: #404040;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
 
 .navbar-nav {

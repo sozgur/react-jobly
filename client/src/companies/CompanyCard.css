@@ -1,0 +1,17 @@
+.CompanyCard {
+    margin-top: 20px;
+    width: 60rem;
+    color: inherit;
+    text-decoration: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.CompanyCard:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+    color: darkblue;
+}
+
+.CompanyCard-logo {
+    float: right;
+}

@@ -4,12 +4,12 @@ import { NavLink, Link } from "react-router-dom";
 function NavBar() {
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="NavBar navbar navbar-expand-lg navbar-dark">
                 <NavLink className="navbar-brand" to="/">
                     Jobly
                 </NavLink>
                 <button
-                    class="navbar-toggler"
+                    className="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
                     data-target="#navbarNav"
@@ -17,21 +17,21 @@ function NavBar() {
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
                             <NavLink className="nav-link" to="/companies">
                                 Companies
                             </NavLink>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <NavLink className="nav-link" to="/jobs">
                                 Jobs
                             </NavLink>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <NavLink className="nav-link" to="/profile">
                                 Profile
                             </NavLink>

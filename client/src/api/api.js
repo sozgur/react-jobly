@@ -41,8 +41,17 @@ class JoblyApi {
     return res.company;
   }
 
+  /** Get companies (filtered by name if defined) */
+
+  static async getCompanies(name) {
+    let res = await this.request(`companies`, { name });
+    return res.companies;
+  }
+
   // obviously, you'll add a lot here ...
 }
+
+export default JoblyApi;
 
 // for now, put token ("testuser" / "password" on class)
 JoblyApi.token =
