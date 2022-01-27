@@ -35,7 +35,7 @@ function JobList() {
                     title={job.title}
                     salary={job.salary}
                     equity={job.equity}
-                    company={job.companyName}
+                    companyName={job.company.name}
                 />
             ))}
         </div>

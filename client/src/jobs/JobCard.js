@@ -1,11 +1,11 @@
 import "./JobCard.css";
 
-function JobCard({ title, salary, equity, company }) {
+function JobCard({ title, salary, equity, companyName }) {
     return (
         <div className="JobCard card">
             <div className="card-body">
                 <h6 className="card-title">{title}</h6>
-                <p className="card-text">{company}</p>
+                <p className="card-text">{companyName}</p>
                 <p class="card-text">
                     <small>Salary: {salary}</small>
                 </p>
