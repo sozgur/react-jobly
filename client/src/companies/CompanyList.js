@@ -2,6 +2,7 @@ import JoblyApi from "../api/api";
 import { useEffect, useState } from "react";
 import CompanyCard from "./CompanyCard";
 import SearchForm from "../common/SearchForm";
+import Loading from "../common/Loading";
 import "./CompanyList.css";
 
 /** Company List Page
@@ -22,7 +23,7 @@ function CompanyList() {
         setCompanies(companies);
     }
 
-    if (!companies) return <div>Loading...</div>;
+    if (!companies) return <Loading />;
 
     console.log(companies);
 

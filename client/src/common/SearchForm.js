@@ -35,7 +35,7 @@ function SearchForm({ search }) {
                     value={searchQuery}
                     onChange={handleChange}
                 />
-                <button className="btn btn-outline-success" type="submit">
+                <button className="btn btn-primary" type="submit">
                     Search
                 </button>
             </form>
