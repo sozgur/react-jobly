@@ -7,7 +7,7 @@ import JobList from "../jobs/JobList";
 import LoginForm from "../auth/LoginForm";
 import SignupForm from "../auth/SignupForm";
 
-function Routes() {
+function Routes({ login, signup }) {
     return (
         <div>
             <Switch>
@@ -15,10 +15,10 @@ function Routes() {
                     <Homepage />
                 </Route>
                 <Route exact path="/login">
-                    <LoginForm />
+                    <LoginForm login={login} />
                 </Route>
                 <Route exact path="/signup">
-                    <SignupForm />
+                    <SignupForm signup={signup} />
                 </Route>
                 <Route exact path="/companies">
                     <CompanyList />
