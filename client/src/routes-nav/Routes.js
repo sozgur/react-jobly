@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Homepage from "../homepage/Homepage";
 import CompanyList from "../companies/CompanyList";
 import CompanyDetail from "../companies/CompanyDetail";
@@ -6,6 +6,7 @@ import ProfileForm from "../profiles/ProfileForm";
 import JobList from "../jobs/JobList";
 import LoginForm from "../auth/LoginForm";
 import SignupForm from "../auth/SignupForm";
+import PrivateRoute from "./PrivateRoute";
 
 function Routes({ login, signup }) {
     return (
@@ -20,18 +21,19 @@ function Routes({ login, signup }) {
                 <Route exact path="/signup">
                     <SignupForm signup={signup} />
                 </Route>
-                <Route exact path="/companies">
+                <PrivateRoute exact path="/companies">
                     <CompanyList />
-                </Route>
-                <Route exact path="/companies/:handle">
+                </PrivateRoute>
+                <PrivateRoute exact path="/companies/:handle">
                     <CompanyDetail />
-                </Route>
-                <Route exact path="/jobs">
+                </PrivateRoute>
+                <PrivateRoute exact path="/jobs">
                     <JobList />
-                </Route>
-                <Route exact path="/profile">
+                </PrivateRoute>
+                <PrivateRoute exact path="/profile">
                     <ProfileForm />
-                </Route>
+                </PrivateRoute>
+                <Redirect to="/" />
             </Switch>
         </div>
     );
