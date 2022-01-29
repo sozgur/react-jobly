@@ -1,0 +1,13 @@
+.Homepage {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.Homepage p {
+    font-size: 24px;
+}
+
+.Homepage h1 {
+    font-size: 48px;
+    font-weight: 600;
+}
