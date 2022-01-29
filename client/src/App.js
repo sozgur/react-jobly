@@ -7,6 +7,7 @@ import JoblyApi from "./api/api";
 import jwt_decode from "jwt-decode";
 import UserContext from "./auth/UserContext";
 import Loading from "./common/Loading";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 /** Jobly application.
  *
@@ -17,13 +18,15 @@ import Loading from "./common/Loading";
  *   if someone is logged in. This is passed around via context throughout app.
  *
  * - token: for logged in users, this is their authentication JWT.
- *   Is required to be set for most API calls.
+ *   Is required to be set for most API calls. This is initially read from
+ *   localStorage and synced to there via the useLocalStorage hook.
  *
  * App -> Routes
  */
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useLocalStorage("auth-token");
+
   const [currentUser, setCurrentUser] = useState(null);
   const [infoLoaded, setInfoLoaded] = useState(false);
 

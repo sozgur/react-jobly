@@ -11,8 +11,6 @@ import "./Homepage.css";
  *
  * Routes -> Homepage
  */
-
-//TODO: add login/regster button
 function Homepage() {
     const { currentUser } = useContext(UserContext);
 
