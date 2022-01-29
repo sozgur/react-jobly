@@ -43,9 +43,6 @@ function SignupForm({ signup }) {
 
     return (
         <>
-            {formErrors.length ? (
-                <Alert type="danger" messages={formErrors} />
-            ) : null}
             <div className="SignupForm">
                 <div className="container">
                     <h3>Sign Up</h3>
@@ -132,6 +129,12 @@ function SignupForm({ signup }) {
                                         onChange={handleChange}
                                     />
                                 </div>
+                                {formErrors.length ? (
+                                    <Alert
+                                        type="danger"
+                                        messages={formErrors}
+                                    />
+                                ) : null}
                                 <button
                                     type="submit"
                                     className="btn btn-primary"

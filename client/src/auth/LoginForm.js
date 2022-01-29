@@ -38,9 +38,6 @@ function LoginForm({ login }) {
 
     return (
         <>
-            {formErrors.length ? (
-                <Alert type="danger" messages={formErrors} />
-            ) : null}
             <div className="LoginForm">
                 <div className="container">
                     <h3>Log In </h3>
@@ -79,6 +76,12 @@ function LoginForm({ login }) {
                                         onChange={handleChange}
                                     />
                                 </div>
+                                {formErrors.length ? (
+                                    <Alert
+                                        type="danger"
+                                        messages={formErrors}
+                                    />
+                                ) : null}
                                 <button
                                     type="submit"
                                     className="btn btn-primary"

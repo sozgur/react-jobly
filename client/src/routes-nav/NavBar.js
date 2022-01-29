@@ -1,7 +1,12 @@
 import "./NavBar.css";
 import { NavLink, Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../auth/UserContext";
 
-function NavBar() {
+function NavBar({ logout }) {
+    const currentUser = useContext(UserContext);
+    console.log(currentUser);
+
     function loggedInNav() {
         return (
             <ul className="navbar-nav">
@@ -21,7 +26,9 @@ function NavBar() {
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link">Log Out</Link>
+                    <Link className="nav-link" to="/" onClick={logout}>
+                        Log out {currentUser.username}
+                    </Link>
                 </li>
             </ul>
         );
@@ -61,7 +68,7 @@ function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    {loggedOutNav()}
+                    {currentUser ? loggedInNav() : loggedOutNav()}
                 </div>
             </nav>
         </div>

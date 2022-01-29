@@ -5,9 +5,11 @@
 
 function Alert({ type = "danger", messages = [] }) {
     return (
-        <div className={`m-3 alert alert-${type}`} role="alert">
-            {messages.map((message) => (
-                <li>{message}</li>
+        <div className={`alert alert-${type}`} role="alert">
+            {messages.map((message, idx) => (
+                <li className="small " key={idx}>
+                    {message}
+                </li>
             ))}
         </div>
     );
