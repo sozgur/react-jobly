@@ -86,12 +86,25 @@ function App() {
     setToken(null);
   }
 
+  /** Handle edit user info */
+  async function updateProfile(username, data) {
+    try {
+      delete data.confirmPassword;
+      const user = await JoblyApi.updateUser(username, data);
+      setCurrentUser(user);
+      return { success: true };
+    } catch (e) {
+      console.log("er", e);
+      return { success: false, errors: e };
+    }
+  }
+
   if (!infoLoaded) return <Loading />;
 
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={{ currentUser }}>
+        <UserContext.Provider value={{ currentUser, updateProfile }}>
           <NavBar logout={logout} />
           <main>
             <Routes signup={signup} login={login} />

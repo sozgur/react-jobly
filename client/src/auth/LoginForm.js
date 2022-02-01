@@ -37,63 +37,55 @@ function LoginForm({ login }) {
     }
 
     return (
-        <>
-            <div className="LoginForm">
-                <div className="container">
-                    <h3>Log In </h3>
-                    <div className="card" style={{ width: "25rem" }}>
-                        <div className="card-body">
-                            <form onSubmit={handleSubmit}>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="username"
-                                        className="form-label"
-                                    >
-                                        Username
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="username"
-                                        name="username"
-                                        value={formData.username}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="password"
-                                        className="form-label"
-                                    >
-                                        Password
-                                    </label>
-                                    <input
-                                        type="password"
-                                        className="form-control"
-                                        id="password"
-                                        name="password"
-                                        value={formData.password}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                {formErrors.length ? (
-                                    <Alert
-                                        type="danger"
-                                        messages={formErrors}
-                                    />
-                                ) : null}
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary"
+        <div className="LoginForm">
+            <div className="container">
+                <h3>Log In </h3>
+                <div className="card" style={{ width: "25rem" }}>
+                    <div className="card-body">
+                        <form onSubmit={handleSubmit}>
+                            <div className="mb-3">
+                                <label
+                                    htmlFor="username"
+                                    className="form-label"
                                 >
-                                    Submit
-                                </button>
-                            </form>
-                        </div>
+                                    Username
+                                </label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="username"
+                                    name="username"
+                                    value={formData.username}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label
+                                    htmlFor="password"
+                                    className="form-label"
+                                >
+                                    Password
+                                </label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            {formErrors.length ? (
+                                <Alert type="danger" messages={formErrors} />
+                            ) : null}
+                            <button type="submit" className="btn btn-primary">
+                                Submit
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

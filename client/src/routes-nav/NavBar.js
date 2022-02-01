@@ -12,23 +12,22 @@ import UserContext from "../auth/UserContext";
  */
 function NavBar({ logout }) {
     const { currentUser } = useContext(UserContext);
-    console.log(currentUser);
 
     function loggedInNav() {
         return (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/companies">
+                    <NavLink className="nav-link me-3" to="/companies">
                         Companies
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/jobs">
+                    <NavLink className="nav-link me-3" to="/jobs">
                         Jobs
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/profile">
+                    <NavLink className="nav-link me-3" to="/profile">
                         Profile
                     </NavLink>
                 </li>
@@ -45,12 +44,12 @@ function NavBar({ logout }) {
         return (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/login">
+                    <NavLink className="nav-link me-3" to="/login">
                         Login
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/signup">
+                    <NavLink className="nav-link me-3" to="/signup">
                         Sign Up
                     </NavLink>
                 </li>
