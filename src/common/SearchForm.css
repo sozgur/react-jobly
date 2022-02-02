@@ -1,3 +1,4 @@
 .SearchForm {
-    width: 80%;
+    max-width: 60rem;
+    width: auto;
 }

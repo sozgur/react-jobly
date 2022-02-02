@@ -1,5 +1,8 @@
 .LoginForm {
-    margin: 4% 0 0 36%;
+    margin: auto;
+    margin-top: 3%;
     font-weight: bold;
     font-size: 17px;
+    width: auto;
+    max-width: 25em;
 }

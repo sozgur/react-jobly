@@ -45,7 +45,7 @@ function SignupForm({ signup }) {
         <div className="SignupForm">
             <div className="container">
                 <h3>Sign Up</h3>
-                <div className="card" style={{ width: "25rem" }}>
+                <div className="card">
                     <div className="card-body">
                         <form onSubmit={handleSubmit}>
                             <div className="mb-3">

@@ -54,7 +54,7 @@ function ProfileForm() {
         <div className="ProfileForm">
             <div className="container">
                 <h3>Profile</h3>
-                <div className="card" style={{ width: "25rem" }}>
+                <div className="card">
                     <div className="card-body">
                         Username
                         <p className="username">{currentUser.username}</p>

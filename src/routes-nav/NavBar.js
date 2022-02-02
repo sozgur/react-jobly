@@ -2,6 +2,7 @@ import "./NavBar.css";
 import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../auth/UserContext";
+import { Button, Navbar, Container, Nav } from "react-bootstrap";
 
 /** Navbar for site. Shows up on every page.
  *
@@ -57,27 +58,20 @@ function NavBar({ logout }) {
         );
     }
     return (
-        <div>
-            <nav className="NavBar navbar navbar-expand-lg navbar-dark">
+        <Navbar className="NavBar" variant="dark" expand="lg">
+            <Container>
                 <NavLink className="navbar-brand" to="/">
                     Jobly
                 </NavLink>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse
+                    className="justify-content-end"
+                    id="basic-navbar-nav"
                 >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    {currentUser ? loggedInNav() : loggedOutNav()}
-                </div>
-            </nav>
-        </div>
+                    <Nav>{currentUser ? loggedInNav() : loggedOutNav()}</Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 }
 
