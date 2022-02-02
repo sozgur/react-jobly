@@ -29,6 +29,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
   const [infoLoaded, setInfoLoaded] = useState(false);
+  const [appliedJobIds, setAppliedJobIds] = useState(new Set([]));
 
   // re run dependency for token
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
         let { username } = jwt_decode(token);
         let currentUser = await JoblyApi.getCurrentUser(username);
         setCurrentUser(currentUser);
+        setAppliedJobIds(new Set(currentUser.jobs));
       } catch (e) {
         console.error("loadUserInfo: problem loading", e);
         setCurrentUser(null);
@@ -94,8 +96,23 @@ function App() {
       setCurrentUser(user);
       return { success: true };
     } catch (e) {
-      console.log("er", e);
       return { success: false, errors: e };
+    }
+  }
+
+  /** Checks if a job has been applied for. */
+  function hasAppliedToJob(jobId) {
+    return appliedJobIds.has(jobId);
+  }
+
+  /** Handle apply to job */
+  async function applicationToJob(id) {
+    try {
+      if (hasAppliedToJob(id)) return;
+      const jobId = await JoblyApi.applyToJob(currentUser.username, id);
+      setAppliedJobIds(new Set([...appliedJobIds, jobId]));
+    } catch (e) {
+      console.error("Apply To Job Errors:", e);
     }
   }
 
@@ -104,7 +121,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={{ currentUser, updateProfile }}>
+        <UserContext.Provider
+          value={{
+            currentUser,
+            updateProfile,
+            applicationToJob,
+            hasAppliedToJob,
+          }}
+        >
           <NavBar logout={logout} />
           <main>
             <Routes signup={signup} login={login} />

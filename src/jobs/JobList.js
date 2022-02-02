@@ -29,14 +29,13 @@ function JobList() {
 
     if (!jobs) return <Loading />;
 
-    console.log(jobs);
-
     return (
         <div className="JobList">
             <SearchForm search={getJobs} />
             {jobs.map((job) => (
                 <JobCard
                     key={job.id}
+                    id={job.id}
                     title={job.title}
                     salary={job.salary}
                     equity={job.equity}

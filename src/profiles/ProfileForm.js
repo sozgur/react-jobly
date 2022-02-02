@@ -39,7 +39,6 @@ function ProfileForm() {
             );
 
             const result = await updateProfile(currentUser.username, formData);
-            console.log("result", result);
             if (!result.success) {
                 setFormErrors(result.errors);
             } else {

@@ -25,8 +25,6 @@ function CompanyList() {
 
     if (!companies) return <Loading />;
 
-    console.log(companies);
-
     return (
         <div className="CompanyList">
             <SearchForm search={getCompanies} />

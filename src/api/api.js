@@ -114,7 +114,7 @@ class JoblyApi {
 
   /** Apply to job rane return jobId */
 
-  static async applyToJob(username, jobId, data) {
+  static async applyToJob(username, jobId) {
     let res = await this.request(`users/${username}/jobs/${jobId}`, {}, "post");
     return res.applied;
   }
